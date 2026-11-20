@@ -1,0 +1,8 @@
+/.gallery-cache/
+/gallery-local/
+/.venv/
+/pdfs/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
