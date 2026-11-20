@@ -96,8 +96,8 @@ def run(args, catalog):
     except ValueError as error:
         raise SystemExit(f"Invalid --years: {error}") from error
     venues = list(dict.fromkeys(item.strip().lower() for item in args.venues.split(",")))
-    if not all(venue in VENUES[:-1] for venue in venues):
-        raise SystemExit(f"--venues must be selected from {', '.join(VENUES[:-1])}")
+    if not all(venue in VENUES for venue in venues):
+        raise SystemExit(f"--venues must be selected from {', '.join(VENUES)}")
     client = Client()
     seed = rosters.seed_pools()
     existing = catalog.existing()

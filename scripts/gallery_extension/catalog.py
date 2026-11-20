@@ -17,7 +17,7 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = ROOT / ".gallery-cache"
 LOCAL = ROOT / "gallery-local"
-VENUES = ("iclr", "icml", "neurips", "cvpr", "acl", "aaai", "tmlr")
+VENUES = ("iclr", "icml", "neurips", "cvpr", "acl", "aaai")
 DISTINCTIONS = ROOT / "data" / "gallery_distinctions.json"
 
 
@@ -190,7 +190,8 @@ class Catalog:
                 for key, record in self.db.execute("SELECT paper_key, record FROM figures")
                 if key not in self.curated
             ]
-            rows = [row for row in rows if not row.get("excluded_reason") and (ROOT / row["image"]).is_file()]
+            rows = [row for row in rows if row["venue"] in VENUES
+                    and not row.get("excluded_reason") and (ROOT / row["image"]).is_file()]
             rows.sort(key=lambda row: (row["venue"], row["year"], row["id"]))
             bundle = "window.GALLERY_ADDITIONS = " + json.dumps(rows, ensure_ascii=True) + ";\n"
             try:

@@ -1,7 +1,7 @@
 /* ===== Gallery static UI dictionary ===== */
 GAL_I18N.register({
   en: {
-    "tagline": 'Inspiration gallery of top-conference Figure 1 · <span class="vn iclr">ICLR</span>·<span class="vn icml">ICML</span>·<span class="vn neurips">NeurIPS</span>·<span class="vn cvpr">CVPR</span>·<span class="vn acl">ACL</span>·<span class="vn aaai">AAAI</span>·<span class="vn tmlr">TMLR</span> · <span class="gallery-years">2017–2026</span>',
+    "tagline": 'Inspiration gallery of top-conference Figure 1 · <span class="vn iclr">ICLR</span>·<span class="vn icml">ICML</span>·<span class="vn neurips">NeurIPS</span>·<span class="vn cvpr">CVPR</span>·<span class="vn acl">ACL</span>·<span class="vn aaai">AAAI</span> · <span class="gallery-years">2017–2026</span>',
     "stat.figures": "figures",
     "intro": 'Browse <b>Figure 1 and teaser figures</b>. Filter by venue, year, <b>awards / presentation</b>, or visual pattern.',
     "search.ph": "Search titles / authors · DPO · robot · 3D · gaussian…",
@@ -34,7 +34,7 @@ GAL_I18N.register({
     "aria.next": "Next figure",
   },
   zh: {
-    "tagline": '顶会论文主图灵感画廊 · <span class="vn iclr">ICLR</span>·<span class="vn icml">ICML</span>·<span class="vn neurips">NeurIPS</span>·<span class="vn cvpr">CVPR</span>·<span class="vn acl">ACL</span>·<span class="vn aaai">AAAI</span>·<span class="vn tmlr">TMLR</span> · <span class="gallery-years">2017–2026</span>',
+    "tagline": '顶会论文主图灵感画廊 · <span class="vn iclr">ICLR</span>·<span class="vn icml">ICML</span>·<span class="vn neurips">NeurIPS</span>·<span class="vn cvpr">CVPR</span>·<span class="vn acl">ACL</span>·<span class="vn aaai">AAAI</span> · <span class="gallery-years">2017–2026</span>',
     "stat.figures": "张",
     "intro": '浏览论文的 <b>Figure 1 / Teaser</b>。可按发表来源、年份、<b>奖项与展示形式</b>和图形模式筛选。',
     "search.ph": "搜索标题或作者 · DPO · robot · 3D · gaussian…",

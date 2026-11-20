@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 from urllib.parse import quote
 
-from gallery_extension.catalog import CACHE, ROOT, Catalog, paper_key
+from gallery_extension.catalog import CACHE, ROOT, VENUES, Catalog, paper_key
 from validate_gallery import VALID_PATTERNS
 
 
@@ -88,7 +88,7 @@ def stage(branch, base, media, generated, message):
 
 def catalog_rows(snapshot):
     if snapshot:
-        return json.loads(snapshot.read_bytes())
+        return [row for row in json.loads(snapshot.read_bytes()) if row["venue"] in VENUES]
     catalog = Catalog()
     try:
         return catalog.publish(strict=True)

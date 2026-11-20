@@ -28,7 +28,7 @@ def main():
     diagram.add_argument("--plan", action="store_true", help="list required archives")
 
     conferences = commands.add_parser("conferences", help="extract from accepted-paper rosters")
-    conferences.add_argument("--venues", default=",".join(VENUES[:-1]), help="comma-separated venues")
+    conferences.add_argument("--venues", default=",".join(VENUES), help="comma-separated venues")
     conferences.add_argument("--years", required=True, help="year, comma-separated years, or inclusive start:end")
     conferences.add_argument("--limit-per-edition", type=positive_int)
     conferences.add_argument("--workers", type=positive_int, default=6)

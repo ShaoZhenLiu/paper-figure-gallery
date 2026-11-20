@@ -41,7 +41,7 @@ py -3.9 -m venv .venv
 
 ## 奖项与展示
 
-Best / Outstanding 筛选包含最佳论文、杰出论文和官方荣誉提名。它与 Oral、Spotlight 独立。一篇获奖的 Oral 论文可以通过两种筛选找到。ICLR 2023 沿用原画廊的 Notable Top 5% → Oral、Notable Top 25% → Spotlight 对照，卡片显示官方名称。TMLR 的 Outstanding Certification 进入 Best / Outstanding 筛选，并以期刊原名显示。
+Best / Outstanding 筛选包含最佳论文、杰出论文和官方荣誉提名。它与 Oral、Spotlight 独立。一篇获奖的 Oral 论文可以通过两种筛选找到。ICLR 2023 沿用原画廊的 Notable Top 5% → Oral、Notable Top 25% → Spotlight 对照，卡片显示官方名称。
 
 扩展图库的名单依据和标签保存在 `data/gallery_distinctions.json`，用会议、年份和标准化标题匹配。导出索引时合并这些字段。历史公开名单缺失或无法确认的条目保留已有录用信息。
 

@@ -174,6 +174,21 @@ class CatalogTest(unittest.TestCase):
                 self.assertEqual(published["tier_label"], "Notable Top 5%")
                 self.assertEqual(published["pattern"], "framework")
 
+    def test_export_omits_previous_entries_outside_supported_venues(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "data").mkdir()
+            (root / "data" / "figures.json").write_text("[]", encoding="utf-8")
+            (root / "figure.jpg").touch()
+            with patch.object(catalog, "ROOT", root), patch.object(catalog, "LOCAL", root / "local"):
+                gallery = catalog.Catalog()
+                with closing(gallery.db):
+                    row = {"id": "old-paper", "image": "figure.jpg", "year": 2026, "venue": "tmlr",
+                           "source": "diagram-bank"}
+                    gallery.save(("old-paper", row))
+                    self.assertEqual(gallery.publish(), [])
+                    self.assertEqual(gallery.db.execute("SELECT COUNT(*) FROM figures").fetchone(), (1,))
+
     def test_export_retries_when_windows_reader_holds_the_snapshot(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "figures.js"

@@ -57,10 +57,12 @@ def verify(url, expected):
         page = browser.new_page(locale="zh-CN", viewport={"width": 1450, "height": 990})
         page.goto(url, wait_until="domcontentloaded")
         page.locator("#result-count b").wait_for()
-        curated, added, article = page.evaluate("""() => [
-            window.FIGURES.length, window.GALLERY_ADDITIONS.length,
-            window.GALLERY_ADDITIONS.find(figure => figure.venue === 'tmlr' && figure.award)
-        ]""")
+        curated, added, article = page.evaluate("""() => {
+            const editions = new Set(window.FIGURES.map(figure => figure.venue + figure.year));
+            const sample = window.GALLERY_ADDITIONS.find(figure =>
+                figure.award && !editions.has(figure.venue + figure.year));
+            return [window.FIGURES.length, window.GALLERY_ADDITIONS.length, sample];
+        }""")
         assert article
         total = curated + added
         assert expected is None or total == expected, total
@@ -70,7 +72,8 @@ def verify(url, expected):
         baseline = filter_state(page)
         assert "2017–2026" in baseline["years"]
         assert page.locator("#year-chips [data-val='2017']").count() == 1
-        assert page.locator("#venue-chips [data-val='tmlr']").count() == 1
+        assert page.locator("#venue-chips [data-val='tmlr']").count() == 0
+        assert page.locator(f"#venue-chips [data-val='{article['venue']}']").count() == 1
 
         curated_button.click()
         assert result_count(page) == (total, total)
@@ -78,7 +81,7 @@ def verify(url, expected):
         assert filter_state(page) == baseline
         assert page.locator(".forge-cta, .forge-nav, #gallery-domain-notice, script[src*='analytics']").count() == 0
 
-        params = {"v": "tmlr", "y": article["year"], "t": "best", "p": article["pattern"],
+        params = {"v": article["venue"], "y": article["year"], "t": "best", "p": article["pattern"],
                   "s": "title", "q": article["title"]}
         page.goto(url + "?" + urlencode(params), wait_until="domcontentloaded")
         page.locator("#result-count b").wait_for()

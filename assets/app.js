@@ -9,7 +9,6 @@
     cvpr:    { name: "CVPR", cn: "CVPR" },
     acl:     { name: "ACL", cn: "ACL" },
     aaai:    { name: "AAAI", cn: "AAAI" },
-    tmlr:    { name: "TMLR", cn: "TMLR" },
   };
   const PATTERNS = {
     teaser:       "Teaser",
@@ -62,7 +61,8 @@
   const state = { ...defaults };
   const curatedFigures = window.FIGURES || [];
   const curatedIds = new Set(curatedFigures.map((figure) => figure.id));
-  const figures = curatedFigures.concat(window.GALLERY_ADDITIONS || []);
+  const figures = curatedFigures.concat(window.GALLERY_ADDITIONS || [])
+    .filter((figure) => Object.prototype.hasOwnProperty.call(VENUES, figure.venue));
   let years = [];
   let venues = [];
   let filtered = [];

@@ -1309,8 +1309,5 @@
   "neurips:2025:qoqmedbuildingmultimodalclinicalfoundationmodelswithdomainawaregrpotraining": {"tier": "oral", "tier_source": "https://neurips.cc/virtual/2025/events/oral"},
   "neurips:2025:rag4gfmbridgingknowledgegapsingraphfoundationmodelsthroughgraphretrievalaugmentedgeneration": {"tier": "oral", "tier_source": "https://neurips.cc/virtual/2025/events/oral"},
   "neurips:2025:rethinkingjointmaximummeandiscrepancyforvisualdomainadaptation": {"tier": "oral", "tier_source": "https://neurips.cc/virtual/2025/events/oral"},
-  "neurips:2025:understandingandmitigatingnumericalsourcesofnondeterminisminllminference": {"tier": "oral", "tier_source": "https://neurips.cc/virtual/2025/events/oral"},
-  "tmlr:2022:ageneralistagent": {"award": "best", "award_source": "https://jmlr.org/tmlr/papers/#outstanding", "award_label": "Outstanding Certification"},
-  "tmlr:2023:holisticevaluationoflanguagemodels": {"award": "best", "award_source": "https://jmlr.org/tmlr/papers/#outstanding", "award_label": "Outstanding Certification"},
-  "tmlr:2024:mantisinterleavedmultiimageinstructiontuning": {"award": "best", "award_source": "https://jmlr.org/tmlr/papers/#outstanding", "award_label": "Outstanding Certification"}
+  "neurips:2025:understandingandmitigatingnumericalsourcesofnondeterminisminllminference": {"tier": "oral", "tier_source": "https://neurips.cc/virtual/2025/events/oral"}
 }

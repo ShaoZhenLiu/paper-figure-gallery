@@ -2,7 +2,7 @@
 
 [打开画廊](https://shaozhenliu.github.io/paper-figure-gallery/) · [查看全部图片](https://shaozhenliu.github.io/paper-figure-gallery/?c=all)
 
-浏览论文的 Figure 1 和 Teaser。画廊支持 ICLR、ICML、NeurIPS、CVPR、ACL、AAAI 和 TMLR，按发表来源、年份、奖项与展示形式、图形模式筛选。点击卡片可以打开大图和原论文。
+浏览论文的 Figure 1 和 Teaser。画廊支持 ICLR、ICML、NeurIPS、CVPR、ACL 和 AAAI，按发表来源、年份、奖项与展示形式、图形模式筛选。点击卡片可以打开大图和原论文。
 
 「仅精选」默认开启，可与其他筛选组合。页面顶部的总数和筛选项基于全量索引，结果栏显示匹配数量与图库总数。
 

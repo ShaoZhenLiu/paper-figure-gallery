@@ -14,7 +14,6 @@
 | CVPR | CVF Open Access（openaccess.thecvf.com，不含 supplemental） | 多为 CC BY 4.0（以论文页标注为准） |
 | ACL | ACL Anthology（long / short / findings） | CC BY 4.0（ACL 2021 起默认） |
 | AAAI | AAAI OJS / proceedings 正式出版 PDF | 以论文页标注为准 |
-| TMLR | TMLR / OpenReview | 以论文页标注为准 |
 
 - 索引和网页卡片标注了**论文标题、全部作者、论文链接与 PDF 来源**。
 - 经 arXiv 获取的论文可能采用不同的默认许可，对应记录的 `pdf_source` 字段会标明来源。
